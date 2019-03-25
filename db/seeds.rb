@@ -16,7 +16,7 @@ initial_questions = Question.create([
                                         {body: 'Why?', test: initial_tests[1]},
                                     ])
 initial_answers = Answer.create([
-                                    {body: 'Me', correct: true, question: initial_questions[0]},
-                                    {body: 'Just because', correct: true, question: initial_questions[1]}
+                                    {body: 'Me', correct: true, question_id: initial_questions[0].id},
+                                    {body: 'Just because', correct: true, question_id: initial_questions[1].id}
                                 ])
 admin = User.create({username: 'admin', password: 'root', email: 'admin@admin.com'})
