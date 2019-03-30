@@ -3,6 +3,5 @@ class Question < ApplicationRecord
   belongs_to :test
 
   validates :body, presence: true
-  validates :answers, length: { in: 0..4 }
 
 end

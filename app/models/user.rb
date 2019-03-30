@@ -5,5 +5,5 @@ class User < ApplicationRecord
 
   validates :email, presence: true
 
-  scope :test_by_level, -> (level) { where(level: level) }
+  scope :test_by_level, -> (level) { joins(:tests).where(tests:{level: level}) }
 end
