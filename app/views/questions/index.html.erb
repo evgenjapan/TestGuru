@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Вапроси?
+<% @questions.each do |question| %>
+  <div class="question">
+    <p>id: <%= question.id %></p>
+    <p>Суть вопроса:<%= question.body %></p>
+  </div>
+<% end %>
+</body>
+</html>
