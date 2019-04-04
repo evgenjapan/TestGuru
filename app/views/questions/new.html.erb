@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/tests/<%= @test.id %>/questions" method="POST">
+    <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
+    <label for="body">Вопрос:</label>
+    <input type="text" id="body" name="question[body]">
+    <input type="submit" class="btn btn-primary" value="Отправить">
+</form>
+</body>
+</html>
