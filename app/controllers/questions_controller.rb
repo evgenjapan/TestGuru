@@ -15,8 +15,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    Question.create!(body: get_question_params[:body], test: @test)
-    redirect_to action: :index
+    @question = @test.questions.create(question_params)
+    if @question.save
+      redirect_to action: :index
+    else
+      redirect_to action: :new
+    end
   end
 
   def destroy
@@ -34,7 +38,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
-  def get_question_params
+  def question_params
     params.require(:question).permit(:body)
   end
 
