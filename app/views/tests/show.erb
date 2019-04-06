@@ -1,0 +1,18 @@
+<div class="test-detail">
+  <h1><%= @test.title %>, level: <%= @test.level %></h1>
+  <p>Category: <%= @test.category.title %></p>
+  <div class="test-question">
+    <h3>Questions:</h3>
+    <% @test.questions.each_with_index do |question, index| %>
+      <div class="single-question">
+        <span class="index-question"><%= index + 1 %></span>
+        <p>Вопрос: <%= question.body %></p>
+        <%= link_to 'Show detail', question_path(question) %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+  <%= link_to 'Edit test', edit_test_path %>
+  <%= link_to 'Back', tests_path %>
+  <%= link_to 'Destroy', test_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>

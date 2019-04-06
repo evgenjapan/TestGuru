@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 Вапроси?
 <% @questions.each do |question| %>
   <div class="question">
     <p>id: <%= question.id %></p>
     <p>Суть вопроса:<%= question.body %></p>
+    <%= link_to 'Show', question_path(question) %>
+    <%= link_to 'Edit', edit_question_path(question) %>
   </div>
 <% end %>
-</body>
-</html>
+<%= link_to 'Create new', new_test_question_path %>

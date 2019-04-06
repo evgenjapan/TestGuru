@@ -1,0 +1,10 @@
+<% @tests.each do |test| %>
+  <div>
+    <h2><%= test.title %></h2>
+    <p>Category: <%= test.category.title %></p>
+    <p>Level: <%= test.level %></p>
+    <p>Questions: <%= test.questions.count %></p>
+  </div>
+  <%= link_to 'Details', test_path(test) %>
+<% end %>
+<%= link_to 'Create new', new_test_path %>
