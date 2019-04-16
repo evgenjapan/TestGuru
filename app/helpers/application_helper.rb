@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def github_url(username, repo_name)
-    "https://github.com/#{username}/#{repo_name}"
+    link_to 'Github', "https://github.com/#{username}/#{repo_name}", target: '_blank'
   end
 end
