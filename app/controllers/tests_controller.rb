@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :get_test, only: %i[show destroy edit update start]
-  before_action :set_user, only: :start
+  before_action :set_user, only: %i[start new create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_not_found
 
@@ -26,8 +26,7 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = User.first
+    @test = @user.tests.new(test_params)
 
     if @test.save
       redirect_to @test
@@ -56,7 +55,7 @@ class TestsController < ApplicationController
   end
 
   def set_user
-    @user = User.first
+    @user = current_user
   end
 
   def test_params
