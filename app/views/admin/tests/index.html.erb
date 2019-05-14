@@ -6,4 +6,6 @@
     <p>Questions: <%= test.questions.count %></p>
   </div>
   <%= button_to 'Start', start_test_path(test) %>
+  <%= link_to 'Details', admin_test_path(test) %>
 <% end %>
+<%= link_to 'Create new', new_admin_test_path %>

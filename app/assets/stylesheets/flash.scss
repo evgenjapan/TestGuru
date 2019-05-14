@@ -4,6 +4,18 @@
   font-size: 17px;
 }
 
-.alert {
+.flash .alert {
   color: red;
+}
+
+.flash .notice {
+  color: deepskyblue;
+}
+
+.flash .success {
+  color: greenyellow;
+}
+
+.flash .warning {
+  color: yellow;
 }

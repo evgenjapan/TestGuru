@@ -2,12 +2,18 @@
   <div>
     <p class="nav-brand"><%= link_to 'TestGuru', tests_path %></p>
     <ul class="link-list">
-      <li class="nav-item"><%= link_to 'Sign up', signup_path %></li>
-      <% if logged_in? %>
-        <li class="nav-item" id="welcome-message">Welcome, <%= current_user.username %> Guru</li>
+      <% if user_signed_in? %>
+        <% if current_user.is_a? Admin %>
+          <%= link_to 'Admin Panel', admin_tests_path %> |
+        <% end %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></p>
       <% else %>
-        <li class="nav-item"><%= link_to 'Login', login_path %></li>
+        <p class="nav user">
+          <%= link_to 'Log In', new_user_session_path %> or
+          <%= link_to 'Sign Up', new_user_registration_path %>
+        </p>
       <% end %>
+      <%= render 'shared/flash' %>
     </ul>
   </div>
 </nav>

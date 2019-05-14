@@ -1,0 +1,11 @@
+<div class="single-question">
+  <p>Вопрос #<%= @question.id %>: <%= @question.body %></p>
+  <div class="answers">
+    <%= link_to 'Создать ответ', new_admin_question_answer_path(@question) %>
+    <p>Ответы:</p>
+    <%= render partial: 'admin/answers/answer', collection: @question.answers %>
+    <%= link_to 'back', admin_test_questions_path(@question.test_id) %>
+    <%= link_to 'Back to test', admin_test_path(@question.test_id) %>
+    <%= link_to 'Delete', admin_question_path(@question), method: :delete, data: {confirm: 'Are ypu sure?'} %>
+  </div>
+</div>
