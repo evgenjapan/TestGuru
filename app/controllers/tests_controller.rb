@@ -1,6 +1,8 @@
 class TestsController < ApplicationController
   before_action :get_test, only: %i[show destroy edit update start]
 
+  skip_before_action :authenticate_user!
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_not_found
 
   def index
