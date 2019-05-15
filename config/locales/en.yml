@@ -26,6 +26,7 @@ en:
       table:
         title: "Title"
         level: "Level"
+        category: "Category"
         questions: "Questions"
         actions: "Actions"
       start_button: "Start"
@@ -52,6 +53,7 @@ en:
           level: "Level"
           questions: "Questions"
           actions: "Actions"
+          category: "Category"
         no_tests_available: "There is no tests available."
         new_test: "New test"
       edit:

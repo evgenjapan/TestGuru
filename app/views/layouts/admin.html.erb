@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Admin Panel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>AdminGuru</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -11,7 +14,6 @@
 
 <body>
 <%= render 'layouts/navbar' %>
-This is admin page!
 <%= yield %>
 <%= render 'layouts/footer' %>
 </body>

@@ -28,6 +28,7 @@ ru:
       table:
         title: "Название"
         level: "Уровень"
+        category: "Категория"
         questions: "Вопросы"
         actions: "Действия"
       start_button: "Пройти"
@@ -54,6 +55,7 @@ ru:
           level: "Уровень"
           questions: "Вопросы"
           actions: "Действия"
+          category: "Категория"
         no_tests_available: "Нет доступных тестов"
         new_test: "Новый тест"
       edit:
