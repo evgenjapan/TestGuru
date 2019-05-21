@@ -14,5 +14,6 @@
       <%= b.label %>
     </p>
   <% end %>
+  <%= link_to 'Gist guestion', gist_test_passage_path(@test_passage), method: :post %>
   <%= form.submit t('.next') %>
 <% end %>
