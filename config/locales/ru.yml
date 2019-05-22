@@ -43,6 +43,9 @@ ru:
       header: "Прохождение Теста %{title}"
       next: "Следующий вопрос"
       status: "Вопрос %{current_question}/%{count_questions}"
+    gist:
+      success: "Gist успешно сохранен! Ссылка %{link}"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:
@@ -71,6 +74,12 @@ ru:
         level: "Уровень"
         author: "Автор"
         questions: "Вопросы"
+    gists:
+      index:
+        header: "Список гистов"
+        question: "Вопрос"
+        url: "Адрес"
+        email: "Почта"
 
   navigation:
     back: "Назад"
@@ -82,3 +91,7 @@ ru:
     edit: "Редактировать"
     delete: "Удалить"
     delete_confirmation: "Вы уверены?"
+
+  services:
+    gist_question_service:
+      description: "Вопрост теста %{title} из ТестГуру"
