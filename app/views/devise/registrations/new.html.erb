@@ -23,17 +23,25 @@
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <div class="passwords">
+    <p class="help-block mismatch hide text-danger">
+      <%= octicon 'issue-opened' %> <b>Пароли не совпадают</b>
+    </p>
+    <p class="help-block match hide text-success">
+      <%= octicon 'issue-closed' %> <b>Пароли совпадают</b>
+    </p>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <em><%= t('devise.shared.password.min_length', count: @minimum_password_length) %></em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", id: 'password' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", id: 'password-repeat' %>
+    </div>
   </div>
 
   <div class="actions">
