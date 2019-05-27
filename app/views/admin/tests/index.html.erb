@@ -9,6 +9,7 @@
     <%= octicon 'arrow-down', class: 'text-success hide' %>
   </p>
 </div>
+<%= render 'shared/errors', resource: @test %>
 <div>
   <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary ml-2' %>
 </div>
@@ -17,12 +18,17 @@
     <% @tests.each do  |test| %>
       <div class="col-12 col-md-6 mt-2 test">
         <div class="card ml-1 mr-1">
-          <h5 class="card-header"><%= test.title %></h5>
+          <h5 class="card-header"><%= content_tag :span,
+                                                  test.title,
+                                                  class: 'test-title',
+                                                  data: {test_id: test.id} %>
+            <%= render 'form_inline', test: test == @test ? @test: test %></h5>
           <div class="card-body">
             <h5 class="card-title"><%= t('.table.category') %>: <%= test.category.title %></h5>
             <p class="card-text"><%= t('.table.level') %>: <%= test.level %> | <%= t('.table.questions') %>: <%= test.questions.count %></p>
             <%= link_to t('actions.show'), admin_test_path(test), class: 'btn btn-primary mr-2' %>
-            <%= link_to t('actions.edit'), edit_admin_test_path(test), class: 'btn btn-primary mr-2' %>
+            <%= link_to t('actions.edit'), edit_admin_test_path(test), class: 'btn btn-primary mr-2 form-inline-link',
+            data: {test_id: test.id}%>
             <%= link_to t('actions.delete'), admin_test_path(test),
                         method: :delete,
                         data: { confirm: t('actions.delete_confirmation') },

@@ -32,6 +32,10 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
+  def current_progress
+    current_question_number / test.questions.count.to_f * 100
+  end
+
   private
 
   def correct_answer?(answer_ids)
