@@ -20,7 +20,7 @@ class Admin::AnswersController < Admin::BaseController
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
-      redirect_to admin_answer_path @answer
+      redirect_to admin_test_questions_path @question.test
     else
       render :new
     end

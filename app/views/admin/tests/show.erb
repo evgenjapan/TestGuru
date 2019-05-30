@@ -14,7 +14,8 @@
 </p>
 
 <%= link_to t('navigation.edit'), edit_admin_test_path(@test) %> |
-<%= link_to t('navigation.back'), admin_tests_path %>
+<%= link_to t('navigation.back'), admin_tests_path %> |
+<%= link_to 'Create question', new_admin_test_question_path(@test) %>
 
 <hr>
 <% @test.questions.each_with_index do |question, index| %>
@@ -22,5 +23,6 @@
     <span class="index-question"><%= index + 1 %></span>
     <p>Вопрос: <%= question.body %></p>
     <%= link_to t('navigation.detail'), admin_question_path(question) %>
+    <%= link_to "Create new answer", new_admin_question_answer_path(question) %>
   </div>
 <% end %>
