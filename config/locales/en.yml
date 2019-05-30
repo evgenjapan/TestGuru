@@ -41,6 +41,7 @@ en:
       header: "Passing the %{title} Test"
       next: "Next question"
       status: "Question %{current_question}/%{count_questions}"
+      no_questions: "This test has no active questions"
     gist:
       success: "Gist was successfully created! Link is %{link}"
       failure: "An error occurred while saving gist"

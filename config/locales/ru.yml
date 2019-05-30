@@ -43,6 +43,7 @@ ru:
       header: "Прохождение Теста %{title}"
       next: "Следующий вопрос"
       status: "Вопрос %{current_question}/%{count_questions}"
+      no_questions: "У этого теста нет доступных вопросов, сейчас его нельзя пройти"
     gist:
       success: "Gist успешно сохранен! Ссылка %{link}"
       failure: "Во время сохранения gist произошла ошибка"

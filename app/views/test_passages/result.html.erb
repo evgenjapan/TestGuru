@@ -5,6 +5,6 @@
 <% if @test_passage.test_passed? %>
   <p style="color: green"><%= t('.success') %></p>
 <% else %>
-  <p style="color: red"><%= t('.fail') %>')</p>
+  <p style="color: red"><%= t('.fail') %></p>
 <% end %>
 <%= link_to t('.tests_link'), tests_path %>
