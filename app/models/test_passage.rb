@@ -33,13 +33,13 @@ class TestPassage < ApplicationRecord
   end
 
   def current_progress
-    current_question_number / test.questions.count.to_f * 100
+    (current_question_number - 1) / test.questions.count.to_f * 100
   end
 
   private
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort unless answer_ids.nil?
   end
 
   def before_validation_set_first_question

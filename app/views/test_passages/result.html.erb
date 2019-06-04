@@ -1,10 +1,10 @@
-<h1><%= t('.header', title: @test_passage.test.title) %>></h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <p>Percent: <%= @test_passage.get_result %>%</p>
 
 <% if @test_passage.test_passed? %>
   <p style="color: green"><%= t('.success') %></p>
 <% else %>
-  <p style="color: red"><%= t('.fail') %>')</p>
+  <p style="color: red"><%= t('.fail') %></p>
 <% end %>
 <%= link_to t('.tests_link'), tests_path %>
