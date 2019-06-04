@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :feedbacks, only: :create
   get 'feedback', to: "feedbacks#new", as: "send_feedback"
 
+  resources :user_badges, only: :index
+  get 'user_badges', to: 'user_badges#index'
+
   root 'tests#index'
 
   resources :tests, only: :index do
@@ -32,5 +35,6 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges
   end
 end
