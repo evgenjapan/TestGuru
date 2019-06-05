@@ -36,6 +36,18 @@ class TestPassage < ApplicationRecord
     (current_question_number - 1) / test.questions.count.to_f * 100
   end
 
+  def time_up?
+    test_finish_timer ? Time.current > test_finish_timer : false
+  end
+
+  def test_finish_timer
+    created_at + test.timer.minutes if test.timer.present?
+  end
+
+  def timer_to_client
+    test_finish_timer.to_f * 1000
+  end
+
   private
 
   def correct_answer?(answer_ids)
