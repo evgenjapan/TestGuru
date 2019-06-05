@@ -12,12 +12,18 @@
           <%= link_to 'Admin panel', admin_tests_path, class: 'nav-link' %>
         </li>
           <li class="nav-item">
-            <%= link_to 'Feedback', send_feedback_path, class: 'nav-link' %>
+            <%= link_to 'Badges', admin_badges_path, class: 'nav-link' %>
           </li>
         <li class="nav-item">
           <%= link_to t('.gists'), admin_gists_path, class: 'nav-link' %>
         </li>
         <% end %>
+        <li class="nav-item">
+          <%= link_to 'Feedback', send_feedback_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'My Badges', user_badges_path, class: 'nav-link' %>
+        </li>
         <li class="nav-item mt-auto mb-auto">
              Welcome, <b><%= current_user.username %></b> Guru!
         </li>
