@@ -5,6 +5,11 @@
   <div class="progress-bar" role="progressbar"
        aria-valuemin="0" aria-valuemax="100"></div>
 <% end %>
+<% if @test_passage.test.timer.present? %>
+  <%= content_tag :div, class: 'timer', data: {timer: @test_passage.timer_to_client} do %>
+    <div class="timer-container"></div>
+  <% end %>
+<% end %>
 
 <b>
   <%= @test_passage.current_question.body %>

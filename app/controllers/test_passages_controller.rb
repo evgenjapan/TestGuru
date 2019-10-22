@@ -10,7 +10,13 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+    if @test_passage.time_up?
+      redirect_to result_test_passage_path(@test_passage)
+      return
+      @test_passage.completed?
+    else
+      @test_passage.accept!(params[:answer_ids])
+    end
 
     if @test_passage.completed?
       BadgesAchievementService.new(@test_passage).call
